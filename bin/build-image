@@ -116,8 +116,8 @@ try:
     if args.template == "debian":
         build_env.execute(["ln", "-sf", "sid",
                            "/usr/share/debootstrap/scripts/stretch"])
-        
-    if build_env.build_env.upload("deps/wget", "/usr/sbin/wget") != 0:
+
+    if build_env.upload("deps/wget", "/usr/sbin/wget") != 0:
         build_env.exit_unstable()    
     
     if build_env.execute(["env"] + env +
